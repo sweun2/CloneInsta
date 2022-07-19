@@ -1,12 +1,17 @@
 package com.clone.insta.repository;
 
-import com.clone.insta.domain.User;
+import com.clone.insta.domain.UserInfo;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UserRepository {
 
-    User save(User user);
+    UserInfo save(UserInfo userInfo);
 
-    Optional<User> findByName(String name);
+    Optional<UserInfo> findByName(String name);
+
+    List<UserInfo> findAll();
+
+    Optional<UserInfo> findById(Long id);
 }
