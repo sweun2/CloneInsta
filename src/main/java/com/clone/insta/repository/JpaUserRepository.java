@@ -21,8 +21,8 @@ public class JpaUserRepository implements UserRepository {
         em.persist(userInfo);
         return userInfo;
     }
-    @Override
 
+    @Override
     public Optional<UserInfo> findByName(String name){
         List<UserInfo> result = em.createQuery("select m from UserInfo m where m.name = :name", UserInfo.class).setParameter("name", name).getResultList();
         return result.stream().findAny();
