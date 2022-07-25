@@ -6,27 +6,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "USERINFO")
 public class UserInfo {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
     private String email;
-    private String password;
-    private String phone;
+    private String password="";;
+    private String phone="";
     private String name;
-    private String title;
-    private String website;
+    private String title="";
+    private String website="";
 
-    public String getProfileImgUrl() {
-        return profileImgUrl;
-    }
 
-    public void setProfileImgUrl(String profileImgUrl) {
-        this.profileImgUrl = profileImgUrl;
-    }
-
-    private String profileImgUrl;
 
 
     public Long getId() {

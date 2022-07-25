@@ -16,7 +16,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(){
-        return "main.html";
+        return "../static/main.html";
     }
 
     @GetMapping("/index")

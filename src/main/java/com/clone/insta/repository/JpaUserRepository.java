@@ -24,16 +24,16 @@ public class JpaUserRepository implements UserRepository {
 
     @Override
     public Optional<UserInfo> findByName(String name){
-        List<UserInfo> result = em.createQuery("select m from UserInfo m where m.name = :name", UserInfo.class).setParameter("name", name).getResultList();
+        List<UserInfo> result = em.createQuery("select m from USERINFO m where m.name = :name", UserInfo.class).setParameter("name", name).getResultList();
         return result.stream().findAny();
     }
     @Override
     public List<UserInfo> findAll(){
-        return em.createQuery("select m from UserInfo m", UserInfo.class).getResultList();
+        return em.createQuery("select m from USERINFO m", UserInfo.class).getResultList();
     }
     @Override
     public Optional<UserInfo> findById(Long id){
-        List<UserInfo> result = em.createQuery("select m from UserInfo m where m.id = :id", UserInfo.class).setParameter("id", id).getResultList();
+        List<UserInfo> result = em.createQuery("select m from USERINFO m where m.id = :id", UserInfo.class).setParameter("id", id).getResultList();
         return result.stream().findAny();
     }
 }

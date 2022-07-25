@@ -17,12 +17,20 @@ public class UserServiceTest {
     @Test
     void join() {
         //given
-        UserInfo member = new UserInfo();
-        member.setName("spring");
+        UserInfo user = new UserInfo();
+        user.setName("spring");
+
+        /*private String email;
+        private String password="";;
+        private String phone="";
+        private String title="";
+        private String website="";
+        private String profileImgUrl="";*/
+
         //when
-        Long saveId = userService.join(member);
+        Long saveId = userService.join(user);
         //then
         UserInfo findMember = userService.findOne(saveId).get();
-        org.assertj.core.api.Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
+        org.assertj.core.api.Assertions.assertThat(user.getName()).isEqualTo(findMember.getName());
     }
 }
